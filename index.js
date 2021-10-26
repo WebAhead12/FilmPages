@@ -1,4 +1,4 @@
-
+const imgURl="https://image.tmdb.org/t/p/w500/";
 
 
 const genreObj = {
@@ -25,6 +25,6 @@ const genreObj = {
 
 
 
-https://image.tmdb.org/t/p/w500/
+
 
 

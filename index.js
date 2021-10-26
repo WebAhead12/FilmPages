@@ -1,3 +1,5 @@
+const imgURl = "https://image.tmdb.org/t/p/w500/";
+
 const genreObj = {
   28: "Action",
   12: "Adventure",
@@ -47,3 +49,10 @@ search1.addEventListener("click", (event) => {
       });
     });
 });
+
+var checkList = document.getElementById("list1");
+checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
+  if (checkList.classList.contains("visible"))
+    checkList.classList.remove("visible");
+  else checkList.classList.add("visible");
+};

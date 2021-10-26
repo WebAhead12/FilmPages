@@ -1,67 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="screen" href="style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" media="screen" href="style.css">
+    <title>Movies/Books</title>
+    <input type="text" placeholder="Search movie name here" />
+    <button type="submit">Submit</button>
 
-  <title>Movies/Books</title>
-  <input type="text" placeholder="Search movie name here" />
-  <button type="submit">Submit</button>
-
-  <div class="dropdownSort">
-    <button class="dropbtn">Sort</button>
-    <div class="dropdown-content-sort">
-      <a href="#">A-Z</a>
-      <a href="#">Z-A</a>
-      <a href="#">Newest to Oldest</a>
-      <a href="#">Oldest to Newest</a>
-      <a href="#">Top-Low Rating</a>
-      <a href="#">Low-Top Rating</a>
+    <div class="dropdownSort">
+      <button class="dropbtn">Sort</button>
+      <div class="dropdown-content-sort">
+        <a href="#">A-Z</a>
+        <a href="#">Z-A</a>
+        <a href="#">Newest to Oldest</a>
+        <a href="#">Oldest to Newest</a>
+        <a href="#">Top-Low Rating</a>
+        <a href="#">Low-Top Rating</a>
+      </div>
     </div>
-  </div>
-  <div id="list1" class="dropdown-check-list" tabindex="100">
-    <span class="anchor">Genres</span>
-    <ul class="items">
-      <li><label><input type="checkbox" />Adventure</label></li>
-      <li><label><input type="checkbox" />Action</label></li>
-      <li><label><input type="checkbox" />Animation</label></li>
-      <li><label><input type="checkbox" />Comedy</label></li>
-      <li><label><input type="checkbox" />Crime</label></li>
-      <li><label><input type="checkbox" />Documentary</label></li>
-      <li><label><input type="checkbox" />Drama</label></li>
-      <li><label><input type="checkbox" />Family</label></li>
-      <li><label><input type="checkbox" />Fantasy</label></li>
-      <li><label><input type="checkbox" />History</label></li>
-      <li><label><input type="checkbox" />Horror</label></li>
-      <li><label><input type="checkbox" />Music</label></li>
-      <li><label><input type="checkbox" />Mystery</label></li>
-      <li><label><input type="checkbox" />Romance</label></li>
-      <li><label><input type="checkbox" />Science Fiction</label></li>
-      <li><label><input type="checkbox" />TV Movie</label></li>
-      <li><label><input type="checkbox" />Thriller</label></li>
-      <li><label><input type="checkbox" />War</label></li>
-      <li><label><input type="checkbox" />Western</label></li>
-    </ul>
-  </div>
+    <div id="list1" class="dropdown-check-list" tabindex="100">
+      <span class="anchor">Genres</span>
+      <ul class="items">
+        <li>
+          <label><input type="checkbox" />Adventure</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Action</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Animation</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Comedy</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Crime</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Documentary</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Drama</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Family</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Fantasy</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />History</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Horror</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Music</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Mystery</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Romance</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Science Fiction</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />TV Movie</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Thriller</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />War</label>
+        </li>
+        <li>
+          <label><input type="checkbox" />Western</label>
+        </li>
+        <button id="filterSubmit" type="submit">Search</button>
+        </li>
+      </ul>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="formPopup" id=myForm>
+    <!-- <div class="formPopup" id=myForm>
     <button type="menu">Filter</button>
     <h4>Genre</h4>
     <input type="checkbox">
@@ -90,43 +115,50 @@
     <label for="9+">9+</label>
   </div>
   </form> -->
-  <h2>FilmPages</h2>
-</head>
+    <h2>FilmPages</h2>
+  </head>
 
-<body>
-  <h1>Based on the Book</h1>
-  <!-- cards that contain movies -->
-  <div class="mainBlock">
-    <h3>Dune</h3>
-    <button type="movie">Movie</button>
-    <button type="book">Book</button>
-    <br><br>
-    <img class="exampleimg" src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg">
-  </div>
-  <div class="moviePopup">
-    <h3>Movie</h3>
-    <p>Title: </p>
-    <img class="imgPopupMovie" src="/css folder/d5NXSklXo0qyIYkgV94XAgMIckC.jpg">
-    <p>Director:</p>
-    <p>Summary</p>
-    <p>Cast:</p>
-    <p>Release Date:</p>
-    <p>Trailer:</p>
-  </div>
+  <body>
+    <h1>Based on the Book</h1>
+    <!-- cards that contain movies -->
+    <div class="mainBlock">
+      <h3>Dune</h3>
+      <button type="movie">Movie</button>
+      <button type="book">Book</button>
+      <br /><br />
+      <img
+        class="exampleimg"
+        src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg"
+      />
+    </div>
+    <div class="moviePopup">
+      <h3>Movie</h3>
+      <p>Title:</p>
+      <img
+        class="imgPopupMovie"
+        src="/css folder/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
+      />
+      <p>Director:</p>
+      <p>Summary</p>
+      <p>Cast:</p>
+      <p>Release Date:</p>
+      <p>Trailer:</p>
+    </div>
 
-  <div class="bookPopup">
-    <h3>Book</h3>
-    <p>Title: </p>
-    <img class="imgPopupBook" src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg">
-    <p>Author:</p>
-    <p>Summary</p>
-    <p>Publishing House:</p>
-    <p>Publish Date:</p>
-    <p>Preview from GoogleBooksAPI:</p>
+    <div class="bookPopup">
+      <h3>Book</h3>
+      <p>Title:</p>
+      <img
+        class="imgPopupBook"
+        src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg"
+      />
+      <p>Author:</p>
+      <p>Summary</p>
+      <p>Publishing House:</p>
+      <p>Publish Date:</p>
+      <p>Preview from GoogleBooksAPI:</p>
+    </div>
+  </body>
 
-  </div>
-</body>
-
-<script src="index.js"></script>
-
+  <script src="index.js"></script>
 </html>

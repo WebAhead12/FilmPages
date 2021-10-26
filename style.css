@@ -1,14 +1,30 @@
 .exampleimg {
-height: 50%;
-width:30%;
+  height: 50%;
+  width: 30%;
+  cursor: pointer;
 }
 
-.imgPopupMovie{
+.imgPopupMovie {
   height: 70%;
-width:50%;
+  width: 50%;
 }
 
 .imgPopupBook {
   height: 70%;
-  width:30%;
+  width: 30%;
+}
+.movieblock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.popup {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: turquoise;
+  transform: translateX(-50%);
 }

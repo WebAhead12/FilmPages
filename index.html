@@ -8,8 +8,9 @@
   <link rel="stylesheet" media="screen" href="style.css">
 
   <title>Movies/Books</title>
-  <p>Search <input type="text" placeholder="Search movie name here" />
-    <button type="submit">Submit</button>
+  <input id ="moviename" type="search" placeholder="Search movie name here" />
+    <button id="search">Search</button>
+    <div class="movieblock"></div>
 
   <div class="filterDropdown">
     <button onclick="myFunction()" class="dropbtn">Filter</button>
@@ -93,7 +94,7 @@
   <div class="moviePopup">
     <h3>Movie</h3>
     <p>Title: </p>
-    <img class="imgPopupMovie" src="/css folder/d5NXSklXo0qyIYkgV94XAgMIckC.jpg">
+    <img class="imgPopupMovie" src="css/d5NXSklXo0qyIYkgV94XAgMIckC.jpg">
     <p>Director:</p>
     <p>Summary</p>
     <p>Cast:</p>
@@ -111,6 +112,10 @@
     <p>Publish Date:</p>
     <p>Preview from GoogleBooksAPI:</p>
 
+  </div>
+
+  <div class="popup">
+    <h1 class="popup-title"></h1>
   </div>
 </body>
 

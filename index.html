@@ -5,12 +5,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movies/Books</title>
+  <link rel="stylesheet" media="screen" href="style.css">
 
+  <title>Movies/Books</title>
   <p>Search <input type="text" placeholder="Search movie name here" />
     <button type="submit">Submit</button>
 
-  <div class="formPopup" id=myForm>
+  <div class="filterDropdown">
+    <button onclick="myFunction()" class="dropbtn">Filter</button>
+    <div id="myDropDown" class="dropdown-content">
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- <div class="formPopup" id=myForm>
     <button type="menu">Filter</button>
     <h4>Genre</h4>
     <input type="checkbox">
@@ -38,16 +53,44 @@
     <input type="checkbox">
     <label for="9+">9+</label>
   </div>
-
-
-
-  </form>
-
+  </form> -->
+  <h2>FilmPages</h2>
 </head>
 
 <body>
   <h1>Based on the Book</h1>
+  <!-- cards that contain movies -->
+  <div class="mainBlock">
+    <h3>Dune</h3>
+    <button type="movie">Movie</button>
+    <button type="book">Book</button>
+    <br><br>
+    <img class="exampleimg" src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg">
+  </div>
+  <div class="moviePopup">
+    <h3>Movie</h3>
+    <p>Title: </p>
+    <img class="imgPopupMovie" src="/css folder/d5NXSklXo0qyIYkgV94XAgMIckC.jpg">
+    <p>Director:</p>
+    <p>Summary</p>
+    <p>Cast:</p>
+    <p>Release Date:</p>
+    <p>Trailer:</p>
+  </div>
 
+  <div class="bookPopup">
+    <h3>Book</h3>
+    <p>Title: </p>
+    <img class="imgPopupBook" src="https://image.tmdb.org/t/p/w500/suXQOby3Vtxth3WaCilyNiSGBb1.jpg">
+    <p>Author:</p>
+    <p>Summary</p>
+    <p>Publishing House:</p>
+    <p>Publish Date:</p>
+    <p>Preview from GoogleBooksAPI:</p>
+
+  </div>
 </body>
+
+<script src="index.js"></script>
 
 </html>

@@ -8,39 +8,45 @@
   <link rel="stylesheet" media="screen" href="style.css">
 
   <title>Movies/Books</title>
-  <p>Search <input type="text" placeholder="Search movie name here" />
-    <button type="submit">Submit</button>
+  <input type="text" placeholder="Search movie name here" />
+  <button type="submit">Submit</button>
 
-  <div class="filterDropdown">
-    <button onclick="myFunction()" class="dropbtn">Filter</button>
-    <div id="myDropDown" class="dropdown-content">
-      <div class="filterDropdown">
-        <button onclick="myFunction()" class="dropbtn">Filter</button>
-        <div id="myDropDown" class="dropdown-content">
+  <div class="dropdownSort">
+    <button class="dropbtn">Sort</button>
+    <div class="dropdown-content-sort">
+      <a href="#">A-Z</a>
+      <a href="#">Z-A</a>
+      <a href="#">Newest to Oldest</a>
+      <a href="#">Oldest to Newest</a>
+      <a href="#">Top-Low Rating</a>
+      <a href="#">Low-Top Rating</a>
+    </div>
+  </div>
+  <div id="list1" class="dropdown-check-list" tabindex="100">
+    <span class="anchor">Genres</span>
+    <ul class="items">
+      <li><label><input type="checkbox" />Adventure</label></li>
+      <li><label><input type="checkbox" />Action</label></li>
+      <li><label><input type="checkbox" />Animation</label></li>
+      <li><label><input type="checkbox" />Comedy</label></li>
+      <li><label><input type="checkbox" />Crime</label></li>
+      <li><label><input type="checkbox" />Documentary</label></li>
+      <li><label><input type="checkbox" />Drama</label></li>
+      <li><label><input type="checkbox" />Family</label></li>
+      <li><label><input type="checkbox" />Fantasy</label></li>
+      <li><label><input type="checkbox" />History</label></li>
+      <li><label><input type="checkbox" />Horror</label></li>
+      <li><label><input type="checkbox" />Music</label></li>
+      <li><label><input type="checkbox" />Mystery</label></li>
+      <li><label><input type="checkbox" />Romance</label></li>
+      <li><label><input type="checkbox" />Science Fiction</label></li>
+      <li><label><input type="checkbox" />TV Movie</label></li>
+      <li><label><input type="checkbox" />Thriller</label></li>
+      <li><label><input type="checkbox" />War</label></li>
+      <li><label><input type="checkbox" />Western</label></li>
+    </ul>
+  </div>
 
-          <input type="checkbox">Action</input>
-          <input type="checkbox">Adventure</input>
-          <input type="checkbox">Animation</input>
-          <input type="checkbox">Comedy</input>
-          <input type="checkbox">Crime</input>
-          <input type="checkbox">Documentary</input>
-          <input type="checkbox">Drama</input>
-          <input type="checkbox">Family</input>
-          <input type="checkbox">Fantasy</input>
-          <input type="checkbox">History</input>
-          <input type="checkbox">Horror</input>
-          <input type="checkbox">Music</input>
-          <input type="checkbox">Mystery</input>
-          <input type="checkbox">Romance</input>
-          <input type="checkbox">Science Fiction</input>
-          <input type="checkbox">TV Movie</input>
-          <input type="checkbox">Thriller</input>
-          <input type="checkbox">War</input>
-          <input type="checkbox">Western</input>
-
-
-        </div>
-      </div>
 
 
 
@@ -49,7 +55,13 @@
 
 
 
-      <!-- <div class="formPopup" id=myForm>
+
+
+
+
+
+
+  <!-- <div class="formPopup" id=myForm>
     <button type="menu">Filter</button>
     <h4>Genre</h4>
     <input type="checkbox">
@@ -78,7 +90,7 @@
     <label for="9+">9+</label>
   </div>
   </form> -->
-      <h2>FilmPages</h2>
+  <h2>FilmPages</h2>
 </head>
 
 <body>

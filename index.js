@@ -21,39 +21,29 @@ const genreObj = {
   10752: "War",
   37: "Western",
 };
+var check = 0;
+const toplowrating = document.querySelector("#Top-Low-Rating");
 let issearch = 2; // issearch = 1 (moviebyname or tvbyname) , issearch = 2(popularmovie or populartv)
 const mvtvtoggle = document.querySelector("#togBtn"); //toggles between tv shows and movies (movie == flase , tv shows == true)
 const imgUrl = "https://image.tmdb.org/t/p/w500/";
 const searchname = document.querySelector("#moviename");
 const search1 = document.querySelector("#search");
 const movieblock1 = document.querySelector(".movieblock");
+
 getPopularMovies();
+
 searchname.addEventListener("click", () => (issearch = 0));
 mvtvtoggle.addEventListener("change", (event) => {
-  if (
-    (mvtvtoggle.checked == true && searchname.value == "" && issearch == 1) ||
-    (mvtvtoggle.checked == true && issearch == 2)
-  ) {
+  if ((mvtvtoggle.checked == true && searchname.value == "" && issearch == 1) || (mvtvtoggle.checked == true && issearch == 2)) {
     movieblock1.innerHTML = "";
     getPopularTvs();
-  } else if (
-    mvtvtoggle.checked == true &&
-    searchname.value != "" &&
-    issearch == 1
-  ) {
+  } else if (mvtvtoggle.checked == true && searchname.value != "" && issearch == 1) {
     movieblock1.innerHTML = "";
     getTvByName(searchname.value);
-  } else if (
-    (mvtvtoggle.checked == false && searchname.value == "" && issearch == 1) ||
-    (mvtvtoggle.checked == false && issearch == 2)
-  ) {
+  } else if ((mvtvtoggle.checked == false && searchname.value == "" && issearch == 1) || (mvtvtoggle.checked == false && issearch == 2)) {
     movieblock1.innerHTML = "";
     getPopularMovies();
-  } else if (
-    mvtvtoggle.checked == false &&
-    searchname.value != "" &&
-    issearch == 1
-  ) {
+  } else if (mvtvtoggle.checked == false && searchname.value != "" && issearch == 1) {
     movieblock1.innerHTML = "";
     getMovieByName(searchname.value);
   }
@@ -77,7 +67,61 @@ search1.addEventListener("click", (event) => {
     issearch = 1;
   }
 });
+toplowrating.addEventListener("click", (event) => {
+  movieblock1.innerHTML = "";
+  if (mvtvtoggle.checked == true) {
+    console.log("1");
+    ratingTopLowTv();
+  } else if (mvtvtoggle.checked == false) {
+    console.log("2");
+    ratingTopLowMovies();
+  }
+});
+// Functions
+//gets top rated movies
+function ratingTopLowMovies() {
+  fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      const arrmovie = json.results;
+      arrmovie.forEach((movie, index) => {
+        if (movie.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${movie.poster_path}`;
+          image.classList.add("exampleimg");
 
+          image.addEventListener("click", () => {});
+
+          movieblock1.appendChild(image);
+        }
+      });
+    });
+}
+//gets top rated tv shows
+function ratingTopLowTv() {
+  fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      const arrmovie = json.results;
+      arrmovie.forEach((tv, index) => {
+        if (tv.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${tv.poster_path}`;
+          image.classList.add("exampleimg");
+
+          image.addEventListener("click", () => {});
+
+          movieblock1.appendChild(image);
+        }
+      });
+    });
+}
 //get movie by name
 function getMovieByName(name) {
   fetch(
@@ -104,9 +148,7 @@ function getMovieByName(name) {
 }
 //get tv by name
 function getTvByName(name) {
-  fetch(
-    `https://api.themoviedb.org/3/search/tv?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1&query=${name}&include_adult=false`
-  )
+  fetch(`https://api.themoviedb.org/3/search/tv?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1&query=${name}&include_adult=false`)
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
       return response.json();
@@ -128,9 +170,7 @@ function getTvByName(name) {
 }
 //get all popular movies
 function getPopularMovies() {
-  fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`
-  )
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
       return response.json();
@@ -152,9 +192,7 @@ function getPopularMovies() {
 }
 //get all popular tv shows
 function getPopularTvs() {
-  fetch(
-    `https://api.themoviedb.org/3/tv/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`
-  )
+  fetch(`https://api.themoviedb.org/3/tv/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
       return response.json();
@@ -177,8 +215,7 @@ function getPopularTvs() {
 const checkList = document.getElementById("list1");
 //check line below - what is evt? Check checklist webpage - w3
 checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-  if (checkList.classList.contains("visible"))
-    checkList.classList.remove("visible");
+  if (checkList.classList.contains("visible")) checkList.classList.remove("visible");
   else checkList.classList.add("visible");
 };
 

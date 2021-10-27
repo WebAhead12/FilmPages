@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" media="screen" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <title>Movies/Books</title>
 </head>
 
@@ -14,101 +14,101 @@
 <main>
   <nav class="navbar">
     <div class="menu">
-      
-  <br><br>
-  <input id="moviename" type="search" placeholder="Search movie name here" />
-  
-  <button id="search">Search</button>
-  <br><br>
 
-  <div class="dropdownSort">
-    <button class="dropbtn">Sort</button>
-    <div class="dropdown-content-sort">
-      <a href="#">A-Z</a>
-      <a href="#">Z-A</a>
-      <a href="#">Newest to Oldest</a>
-      <a href="#">Oldest to Newest</a>
-      <a href="#">Top-Low Rating</a>
+      <br><br>
+      <input id="moviename" type="search" placeholder="Search movie name here" />
+
+      <button id="search">Search</button>
+      <br><br>
+
+      <div class="dropdownSort">
+        <button class="dropbtn">Sort</button>
+        <div class="dropdown-content-sort">
+          <a href="#">A-Z</a>
+          <a href="#">Z-A</a>
+          <a href="#">Newest to Oldest</a>
+          <a href="#">Oldest to Newest</a>
+          <a href="#">Top-Low Rating</a>
+
+        </div>
+      </div>
+      <div id="list1" class="dropdown-check-list" tabindex="100">
+        <span class="anchor">Genres</span>
+        <ul class="items">
+          <li>
+            <label><input class="genre" type="checkbox" id="checkId">Adventure</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Adventure</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Action</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Animation</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Comedy</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Crime</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Documentary</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Drama</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Family</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Fantasy</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />History</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Horror</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Music</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Mystery</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Romance</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Science Fiction</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />TV Movie</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Thriller</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />War</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Western</label>
+          </li>
+          </li>
+          <button id="filterSubmit" type="submit">Search</button>
+
+          <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
+        </ul>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="togBtn">
+        <div class="slider round"></div>
+      </label>
 
     </div>
-  </div>
-  <div id="list1" class="dropdown-check-list" tabindex="100">
-    <span class="anchor">Genres</span>
-    <ul class="items">
-      <li>
-        <label><input class="genre" type="checkbox" id="checkId">Adventure</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Adventure</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Action</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Animation</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Comedy</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Crime</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Documentary</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Drama</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Family</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Fantasy</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />History</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Horror</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Music</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Mystery</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Romance</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Science Fiction</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />TV Movie</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Thriller</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />War</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Western</label>
-      </li>
-      </li>
-      <button id="filterSubmit" type="submit">Search</button>
-
-      <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
-    </ul>
-  </div>
-  
-  <label class="switch">
-    <input type="checkbox" id="togBtn">
-    <div class="slider round"></div>
-    </label>
-  
-  </div>
-</nav>
+  </nav>
 
 
 </main>
@@ -119,15 +119,15 @@
 <body>
 
   <br>
-  <!-- <div class="popup">
+  <div class="popup">
     <h1 class="popup-title">Interstellar</h1>
     <img src="CSS Stuff/interstellar example.jpg">
-    <p>Rating: 8.6/10 </p>
+    <p>Rating: 8.6 </p>
     <p>Overview:The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
       limitations on human space travel and conquer the vast distances involved in an interstellar voyage.</p>
     <p>Director: Christopher Nolan</p>
     <p>Genre: Sci-fi/Adventure/Drama</p>
-    <p> Official Trailer: <iframe width="90%" height="300" src="https://www.youtube.com/embed/zSWdZVtXT7E"
+    <p> Official Trailer: <iframe width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe></video></p>
@@ -136,7 +136,7 @@
     <p></p>
 
 
-  </div> -->
+  </div>
 
 
   <!-- cards that contain movies -->
@@ -147,12 +147,12 @@
 
   <!-- 
   Zoom Card Popup For Genres -->
- 
-    <div class="counter"></div>
-  
-    <button class="paginate left"><i></i><i></i></button>
-    <button class="paginate right"><i></i><i></i></button>
-  
+
+  <div class="counter"></div>
+
+  <button class="paginate left"><i></i><i></i></button>
+  <button class="paginate right"><i></i><i></i></button>
+
 
 </body>
 

@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" media="screen" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <title>Movies/Books</title>
 </head>
 
 
 <main>
   <nav class="navbar">
+    <h2>FilmPages</h2>
     <div class="menu">
       
   <br><br>
@@ -24,7 +25,7 @@
   <div class="dropdownSort">
     <button class="dropbtn">Sort</button>
     <div class="dropdown-content-sort">
-      <a button id ="A-Z" href="#">A-Z</a>
+      <a id ="A-Z" href="#">A-Z</a>
       <a id="Z-A" href="#">Z-A</a>
       <a id="Newest-to-Oldest" href="#">Newest to Oldest</a>
       <a id="Oldest-to-Newest"href="#">Oldest to Newest</a>
@@ -32,6 +33,7 @@
 
     </div>
   </div>
+
   <div id="list1" class="dropdown-check-list" tabindex="100">
     <span class="anchor">Genres</span>
     <ul class="items">
@@ -112,22 +114,22 @@
 
 
 </main>
-<h2>FilmPages</h2>
+
 
 
 
 <body>
 
   <br>
-  <!-- <div class="popup">
+  <div class="popup">
     <h1 class="popup-title">Interstellar</h1>
     <img src="CSS Stuff/interstellar example.jpg">
-    <p>Rating: 8.6/10 </p>
+    <p>Rating: 8.6 </p>
     <p>Overview:The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
       limitations on human space travel and conquer the vast distances involved in an interstellar voyage.</p>
     <p>Director: Christopher Nolan</p>
     <p>Genre: Sci-fi/Adventure/Drama</p>
-    <p> Official Trailer: <iframe width="90%" height="300" src="https://www.youtube.com/embed/zSWdZVtXT7E"
+    <p> Official Trailer: <iframe width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe></video></p>
@@ -136,7 +138,7 @@
     <p></p>
 
 
-  </div> -->
+  </div>
 
 
   <!-- cards that contain movies -->
@@ -147,7 +149,15 @@
 
   <!-- 
   Zoom Card Popup For Genres -->
-
+ 
+    <div class="pag">
+    
+  
+    <button class="paginate left"><i></i><i></i></button>
+    <div class="counter"></div>
+    <button class="paginate right"><i></i><i></i></button>
+  
+  </div>
 </body>
 
 <script src="index.js"></script>

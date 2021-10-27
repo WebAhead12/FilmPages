@@ -43,7 +43,7 @@ search1.addEventListener("click", (event) => {
         image.alt = movie.title;
         image.classList.add("exampleimg");
 
-        image.addEventListener("click", () => {});
+        image.addEventListener("click", () => { });
 
         movieblock1.appendChild(image);
       });
@@ -51,8 +51,36 @@ search1.addEventListener("click", (event) => {
 });
 
 var checkList = document.getElementById("list1");
+//check line below - what is evt? Check checklist webpage - w3
 checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
   if (checkList.classList.contains("visible"))
     checkList.classList.remove("visible");
   else checkList.classList.add("visible");
 };
+
+
+
+//No need for this
+// function check() {
+//   let inputs = document.getElementsById('checkId');
+//   inputs.checked = true;
+// }
+
+// create uncheck function 
+// function uncheck() {
+//   let inputs = document.getElementById('checkId');
+//   inputs.checked = false;
+// }
+// window.onload = function () {
+//   window.addEventListener('load', check, false);
+// }
+
+
+function uncheck() {
+  var uncheck = document.getElementsByTagName('input');
+  for (var i = 0; i < uncheck.length; i++) {
+    if (uncheck[i].type == 'checkbox') {
+      uncheck[i].checked = false;
+    }
+  }
+}

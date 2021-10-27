@@ -120,6 +120,12 @@ body {
   margin-left: 10%;
 }
 
+.popup .close {
+  width: 10%;
+  height: 10%;
+  margin-left: 90%;
+}
+
 .popup p:nth-of-type(1) {
   position: absolute;
   background-color: rgb(51, 88, 102);
@@ -129,7 +135,7 @@ body {
   padding: 1.5%;
   width: 20%;
   height: 5%;
-  top: 3%;
+  top: 5%;
   left: 7%;
   display: flex;
   text-align: center;

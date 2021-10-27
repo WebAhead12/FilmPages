@@ -13,105 +13,111 @@
 
 <main>
   <nav class="navbar">
-    <h2>FilmPages</h2>
+    <img src="CSS Stuff/logo cropped.png">
     <div class="menu">
-      
-  <br><br>
-  <input id="moviename" type="search" placeholder="Search movie name here" />
-  
-  <button id="search">Search</button>
-  <br><br>
 
-  <div class="dropdownSort">
-    <button class="dropbtn">Sort</button>
-    <div class="dropdown-content-sort">
-      <a id ="A-Z" href="#">A-Z</a>
-      <a id="Z-A" href="#">Z-A</a>
-      <a id="Newest-to-Oldest" href="#">Newest to Oldest</a>
-      <a id="Oldest-to-Newest"href="#">Oldest to Newest</a>
-      <a id="Top-Low-Rating" href="#">Top-Low Rating</a>
 
+
+      <br><br>
+      <input id="moviename" type="search" placeholder="Search movie name here" />
+
+      <button id="search">Search</button>
+      <br><br><br>
+
+      <!-- NEW INSTEAD OF OG SORT -->
+      <form class="dropDownSort" method="get">
+        <select button class="dropbtn">Sort</button>>
+          <div class="dropdown-content-sort"></div>
+          <option id="sortDefault" href="#">Sort</option>
+          <option id="A-Z" href="#">A-Z</option>
+          <option id="Z-A" href="#">Z-A</option>
+          <option id="Newest-to-Oldest" href="#">Newest to Oldest</option>
+          <option id="Oldest-to-Newest" href="#">Oldest to Newest</option>
+          <option id="Top-Low-Rating" href="#">Top-Low Rating</option>
+        </select>
+        <input type="hidden" name="paged" value="1">
+      </form>
+
+
+      <div id="list1" class="dropdown-check-list" tabindex="100">
+        <span class="anchor">Genres</span>
+        <ul class="items">
+          <li>
+            <label><input class="genre" type="checkbox" id="checkId">Adventure</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Adventure</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Action</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Animation</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Comedy</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Crime</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Documentary</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Drama</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Family</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Fantasy</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />History</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Horror</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Music</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Mystery</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Romance</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Science Fiction</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />TV Movie</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Thriller</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />War</label>
+          </li>
+          <li>
+            <label><input class="genre" type="checkbox" />Western</label>
+          </li>
+          </li>
+          <button id="filterSubmit" type="submit">Search</button>
+
+          <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
+        </ul>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="togBtn">
+        <div class="slider round"></div>
+      </label>
+      <br><br>
     </div>
-  </div>
 
-  <div id="list1" class="dropdown-check-list" tabindex="100">
-    <span class="anchor">Genres</span>
-    <ul class="items">
-      <li>
-        <label><input class="genre" type="checkbox" id="checkId">Adventure</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Adventure</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Action</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Animation</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Comedy</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Crime</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Documentary</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Drama</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Family</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Fantasy</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />History</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Horror</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Music</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Mystery</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Romance</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Science Fiction</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />TV Movie</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Thriller</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />War</label>
-      </li>
-      <li>
-        <label><input class="genre" type="checkbox" />Western</label>
-      </li>
-      </li>
-      <button id="filterSubmit" type="submit">Search</button>
-
-      <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
-    </ul>
-  </div>
-  
-  <label class="switch">
-    <input type="checkbox" id="togBtn">
-    <div class="slider round"></div>
-    </label>
-  
-  </div>
-</nav>
-
+  </nav>
+  <br>
 
 </main>
 
@@ -120,27 +126,40 @@
 
 <body>
 
-  <br>
+  <br><br>
   <div class="popup">
+    <!-- "title" -->
     <h1 class="popup-title">Interstellar</h1>
-    <img src="CSS Stuff/interstellar example.jpg">
-    <p>Rating: 8.6 </p>
-    <p>Overview:The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
-      limitations on human space travel and conquer the vast distances involved in an interstellar voyage.</p>
-    <p>Director: Christopher Nolan</p>
-    <p>Genre: Sci-fi/Adventure/Drama</p>
-    <p> Official Trailer: <iframe width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe></video></p>
-    <p>Cast: A Bunch of People </p>
-    <p>Release Date: 2014</p>
-    <p></p>
+    <!-- Need to do JS for X button -->
 
+    <!-- "poster_path" -->
+    <img src="CSS Stuff/interstellar example.jpg">
+    <!-- "vote_average" -->
+    <p>Rating 8.6 </p>
+    <!-- "overview" -->
+    <h3>Overview</h3>
+    <p>The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
+      limitations on human space travel and conquer the vast distances involved in an interstellar voyage.</p>
+    <!-- "genres" -->
+    <h3>Genre</h3>
+    <p>Sci-fi/Adventure/Drama</p>
+    <!-- "job":"Director"  *****Make sure to specify that only the word Director alone is searched for -->
+    <h3>Director</h3>
+    <p>Christopher Nolan</p>
+    <!------"cast"----"order": 0-4 ------>
+    <h3>Cast</h3>
+    <p>A Bunch of People </p>
+    <!-- "release_date" -->
+    <h3>Release Date</h3>
+    <p>2014</p>
+    <br>
+    <!-- "You need to get the "type":"Trailer" then "site":"YouTube" then "key": zSWdZVtXT7E (example key) -->
+    <h3>Official Trailer</h3>
+    <iframe width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E" title="YouTube video player"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe></video>
 
   </div>
-
-
   <!-- cards that contain movies -->
   <div class="mainBlock">
   </div>
@@ -149,15 +168,20 @@
 
   <!-- 
   Zoom Card Popup For Genres -->
- 
-    <div class="pag">
-    
-  
+
+  <div class="pag">
+
+
     <button class="paginate left"><i></i><i></i></button>
     <div class="counter"></div>
     <button class="paginate right"><i></i><i></i></button>
-  
+
   </div>
+
+
+
+
+
 </body>
 
 <script src="index.js"></script>

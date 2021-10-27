@@ -9,6 +9,12 @@ main {
   width: 100%;
 }
 
+main img {
+  position: absolute;
+  left: 2%;
+  top:1%
+}
+
 /* .dropdownSort, */
 .dropdown-check-list {
   margin-left: 10%;
@@ -16,29 +22,36 @@ main {
 }
 
 #moviename {
+  position: absolute;
+  top: 2.5%;
+  left:30%;
   border-radius: 20px;
   border-color: #04aa6d;
   border: none;
   padding: 10px;
-  width: 79%;
+  width: 50%;
 }
 #search {
+  position: absolute;
+  top:8%;
   color: #fff;
   border-radius: 15px;
   background: #04aa6d;
   border: none;
   padding: 10px;
   margin-left: 5px;
-  /* justify-content: center; */
+  top: 2.5%;
+  left:80%;
 }
 
 body {
-  background-image: url("CSS Stuff/FullBackground.jpg");
+  background-color: rgb(83, 145, 145);
   margin: 0;
 }
 
 .exampleimg {
-  height: 70%;
+
+  height: 80%;
   width: 45%;
   margin: 2%;
   cursor: pointer;
@@ -48,11 +61,12 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-evenly;
   padding: 10px;
   background-color: lightblue;
   color: #fff;
   width: 100%;
+  H
 }
 /* NAVBAR MENU */
 /* .menu {
@@ -79,17 +93,20 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-left: 7%;
+  
 }
 
 .popup {
   position: absolute;
-  top: 25%;
-  left: 50%;
-  width: 85%;
+  top: 35%;
+  left: 53%;
+  width: 70%;
   height: auto;
   background-color: rgb(151, 190, 196);
   transform: translateX(-50%);
   padding: 2%;
+  border-radius: 4%;
 }
 
 .popup h1 {
@@ -98,7 +115,7 @@ body {
   font-weight: 700;
 }
 .popup img {
-  width: 80%;
+  width: 75%;
   height: 40%;
   margin-left: 10%;
 }
@@ -107,12 +124,12 @@ body {
   position: absolute;
   background-color: rgb(51, 88, 102);
   border-radius: 70px;
-  background: #73ad21;
-  font-size: 30px;
+  background: rgb(83, 145, 145);
+  font-size: 18px;
   padding: 1.5%;
-  width: 10%;
+  width: 20%;
   height: 5%;
-  top: 2%;
+  top: 3%;
   left: 7%;
   display: flex;
   text-align: center;
@@ -120,15 +137,37 @@ body {
   align-items: center;
 }
 
+.popup h3 {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+.popup p:nth-of-type(3), p:nth-of-type(4), p:nth-of-type(5), p:nth-of-type(6), p:nth-of-type(7)  {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1%;
+}
+
+p:nth-of-type(2) {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  padding-right: 11%;
+  padding-left: 11%;
+  line-height: 140%;
+}
+
 .popup iframe {
   padding: 5%;
 }
 
 .dropdown-check-list {
-  display: inline-block;
+  display:inline-block;
+  position: absolute;
   background-color: #04aa6d;
   border-radius: 30px;
   margin-left: 80px;
+  left: 25%;
 }
 
 .dropdown-check-list .anchor {
@@ -165,14 +204,16 @@ body {
 /* Sort Dropdown Button */
 
 .dropbtn {
+  position: absolute;
   background-color: #04aa6d;
   color: white;
-  width: 150%;
+  width: 30%;
   padding: 10px;
   font-size: 15px;
   border: none;
   border-radius: 30px;
   padding: 10px 10px;
+  left: 3%;
 }
 
 .dropdown-check-list {
@@ -227,15 +268,15 @@ body {
   background-color: #3e8e41;
 }
 
-#filterSubmit {
-}
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
+  width: 105px;
   height: 34px;
   margin-bottom: -12px;
+  left: 130%;
+  
 }
 
 .switch input {
@@ -258,10 +299,10 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 33px;
+  width:35px;
   left: 4px;
-  bottom: 4px;
+  bottom: 1px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -277,24 +318,25 @@ input:checked + .slider {
 } */
 
 input:checked + .slider:before {
-  transform: translateX(45px);
+  transform: translateX(65px);
 }
 
 /*------ ADDED CSS ---------*/
 .slider:after {
-  content: "  Movies";
+  content: "Movies";
   color: white;
   display: block;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
-  left: 60%;
-  font-size: 10px;
+  left: 65%;
+  font-size: 15px;
   font-family: Verdana, sans-serif;
 }
 
 input:checked + .slider:after {
   content: "Tv shows";
+  font-size: 15px;
   left: 45%;
 }
 
@@ -316,27 +358,25 @@ input:checked + .slider:after {
 }
 
 /* //counter(pagination) */
-body {
+/* body {
   background: #33ab83;
-}
+} */
 
-button {
-  -webkit-appearance: none;
-  background: transparent;
-  border: 0;
-  outline: 0;
-}
+
 
 .paginate {
   margin: 10px;
   width: 50px;
   height: 50px;
   cursor: pointer;
-  transform: translate3d(0, 0, 0);
-
+   transform: translate3d(0, 0, 0);
   top: 50%;
   margin-top: -20px;
   -webkit-filter: drop-shadow(0 2px 0px rgba(0, 0, 0, 0.2));
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
 }
 .paginate i {
   position: absolute;
@@ -345,7 +385,7 @@ button {
   width: 50px;
   height: 5px;
   border-radius: 2.5px;
-  background: #fff;
+  background: rgb(12, 12, 12);
   transition: all 0.15s ease;
 }
 .paginate.left {
@@ -434,7 +474,7 @@ button {
   font-size: 30px;
   font-family: Helvetica, sans-serif;
   text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: rgb(26, 25, 25);
 }
 
 .pag {

@@ -21,15 +21,53 @@ const genreObj = {
   10752: "War",
   37: "Western",
 };
-
+let issearch = 2; // issearch = 1 (moviebyname or tvbyname) , issearch = 2(popularmovie or populartv)
+const mvtvtoggle = document.querySelector(".checkbox"); //toggles between tv shows and movies (movie == flase , tv shows == true)
 const imgUrl = "https://image.tmdb.org/t/p/w500/";
-const moviename1 = document.querySelector("#moviename");
+const searchname = document.querySelector("#moviename");
 const search1 = document.querySelector("#search");
 const movieblock1 = document.querySelector(".movieblock");
+getPopularMovies();
+searchname.addEventListener("click", () => (issearch = 0));
+mvtvtoggle.addEventListener("change", (event) => {
+  if ((mvtvtoggle.checked == true && searchname.value == "" && issearch == 1) || (mvtvtoggle.checked == true && issearch == 2)) {
+    movieblock1.innerHTML = "";
+    getPopularTvs();
+  } else if (mvtvtoggle.checked == true && searchname.value != "" && issearch == 1) {
+    movieblock1.innerHTML = "";
+    getTvByName(searchname.value);
+  } else if ((mvtvtoggle.checked == false && searchname.value == "" && issearch == 1) || (mvtvtoggle.checked == false && issearch == 2)) {
+    movieblock1.innerHTML = "";
+    getPopularMovies();
+  } else if (mvtvtoggle.checked == false && searchname.value != "" && issearch == 1) {
+    movieblock1.innerHTML = "";
+    getMoiveByName(searchname.value);
+  }
+});
 search1.addEventListener("click", (event) => {
   movieblock1.innerHTML = "";
+  if (mvtvtoggle.checked == true && searchname.value == "") {
+    movieblock1.innerHTML = "";
+    getPopularTvs();
+    issearch = 2;
+  } else if (mvtvtoggle.checked == false && searchname.value == "") {
+    movieblock1.innerHTML = "";
+    getPopularMovies();
+    issearch = 2;
+  }
+  if (mvtvtoggle.checked == true && searchname.value != "") {
+    getTvByName(searchname.value);
+    issearch = 1;
+  } else if (mvtvtoggle.checked == false && searchname.value != "") {
+    getMoiveByName(searchname.value);
+    issearch = 1;
+  }
+});
+
+//get movie by name
+function getMoiveByName(name) {
   fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=d5dc762873106644192a916a78a39251&language=en-US&query=${moviename1.value}&api_key=d5dc762873106644192page=1&include_adult=false`
+    `https://api.themoviedb.org/3/search/movie?api_key=d5dc762873106644192a916a78a39251&language=en-US&query=${name}&api_key=d5dc762873106644192page=1&include_adult=false`
   )
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
@@ -38,49 +76,94 @@ search1.addEventListener("click", (event) => {
     .then((json) => {
       const arrmovie = json.results;
       arrmovie.forEach((movie, index) => {
-        const image = document.createElement("img");
-        image.src = `${imgUrl}${movie.poster_path}`;
-        image.alt = movie.title;
-        image.classList.add("exampleimg");
+        if (movie.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${movie.poster_path}`;
+          image.classList.add("exampleimg");
 
-        image.addEventListener("click", () => { });
+          image.addEventListener("click", () => {});
 
-        movieblock1.appendChild(image);
+          movieblock1.appendChild(image);
+        }
       });
     });
-});
+}
+//get tv by name
+function getTvByName(name) {
+  fetch(`https://api.themoviedb.org/3/search/tv?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1&query=${name}&include_adult=false`)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      const arrmovie = json.results;
+      arrmovie.forEach((tv, index) => {
+        if (tv.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${tv.poster_path}`;
+          image.classList.add("exampleimg");
 
-var checkList = document.getElementById("list1");
+          image.addEventListener("click", () => {});
+
+          movieblock1.appendChild(image);
+        }
+      });
+    });
+}
+//get all popular movies
+function getPopularMovies() {
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      const arrmovie = json.results;
+      arrmovie.forEach((movie, index) => {
+        if (movie.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${movie.poster_path}`;
+          image.classList.add("exampleimg");
+
+          image.addEventListener("click", () => {});
+
+          movieblock1.appendChild(image);
+        }
+      });
+    });
+}
+//get all popular tv shows
+function getPopularTvs() {
+  fetch(`https://api.themoviedb.org/3/tv/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=1`)
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      const arrmovie = json.results;
+      arrmovie.forEach((movie, index) => {
+        if (movie.poster_path != null) {
+          const image = document.createElement("img");
+          image.src = `${imgUrl}${movie.poster_path}`;
+          image.classList.add("exampleimg");
+
+          image.addEventListener("click", () => {});
+
+          movieblock1.appendChild(image);
+        }
+      });
+    });
+}
+const checkList = document.getElementById("list1");
 //check line below - what is evt? Check checklist webpage - w3
 checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-  if (checkList.classList.contains("visible"))
-    checkList.classList.remove("visible");
+  if (checkList.classList.contains("visible")) checkList.classList.remove("visible");
   else checkList.classList.add("visible");
 };
 
-
-
-//No need for this
-// function check() {
-//   let inputs = document.getElementsById('checkId');
-//   inputs.checked = true;
-// }
-
-// create uncheck function 
-// function uncheck() {
-//   let inputs = document.getElementById('checkId');
-//   inputs.checked = false;
-// }
-// window.onload = function () {
-//   window.addEventListener('load', check, false);
-// }
-
-
 function uncheck() {
-  var uncheck = document.getElementsByTagName('input');
-  for (var i = 0; i < uncheck.length; i++) {
-    if (uncheck[i].type == 'checkbox') {
-      uncheck[i].checked = false;
-    }
+  let uncheck = document.querySelectorAll(".genre");
+  for (let i = 0; i < uncheck.length; i++) {
+    uncheck[i].checked = false;
   }
 }

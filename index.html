@@ -12,8 +12,14 @@
 
 
 <main>
+  <nav class="navbar">
+    <div class="menu">
+      
+  <br><br>
   <input id="moviename" type="search" placeholder="Search movie name here" />
+  
   <button id="search">Search</button>
+  <br><br>
 
   <div class="dropdownSort">
     <button class="dropbtn">Sort</button>
@@ -95,12 +101,14 @@
       <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
     </ul>
   </div>
-  <br>
-  <input type="checkbox" id="switch" class="checkbox" />
-  <label for="switch" class="toggle">
-    <p>TV &nbsp &nbsp &nbsp Movies</p>
-
-  </label>
+  
+  <label class="switch">
+    <input type="checkbox" id="togBtn">
+    <div class="slider round"></div>
+    </label>
+  
+  </div>
+</nav>
 
 
 </main>

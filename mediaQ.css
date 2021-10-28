@@ -1,7 +1,12 @@
-@media (min-width: 320) and (max-width: 424) {
+@media (min-width: 320px) and (max-width: 424px) {
   .rating1 {
     width: min-content;
     height: min-content;
+  }
+  .exampleimg {
+    height: 20vh;
+    width: 35%;
+    margin: 1%;
   }
 }
 
@@ -14,6 +19,11 @@
     max-height: 900px;
     width: 300px;
   }
+   .exampleimg {
+    height: 30vh;
+    width: 31%;
+    margin: 1%;
+  }
   .rating1 {
     width: min-content;
     height: min-content;
@@ -24,7 +34,7 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .exampleimg {
-    height: 30vh;
+    height: 40vh;
     width: 31%;
     margin: 1%;
   }
@@ -46,7 +56,7 @@
 
 @media (min-width: 1024px) and (max-width: 1618px) {
   .exampleimg {
-    height: 30vh;
+    height: 40vh;
     width: 17%;
     margin: 1%;
   }
@@ -77,13 +87,19 @@
   }
 }
 
-@media (max-width: 2048) and (min-width: 1618px) {
+@media (max-width: 2048px) and (min-width: 1618px) {
   .popup {
     overflow-y: auto;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     max-height: 900px;
     width: 400px;
+  }
+
+  .exampleimg {
+    height: 40vh;
+    width: 15%;
+    margin: 1%;
   }
   .rating1 {
     width: min-content;

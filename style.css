@@ -15,6 +15,7 @@ main img {
   top:1%
 }
 
+
 /* .dropdownSort, */
 .dropdown-check-list {
   margin-left: 10%;
@@ -29,7 +30,7 @@ main img {
   border-color: #04aa6d;
   border: none;
   padding: 10px;
-  width: 50%;
+  width: 47%;
 }
 #search {
   position: absolute;
@@ -41,13 +42,15 @@ main img {
   padding: 10px;
   margin-left: 5px;
   top: 2.5%;
-  left:80%;
+  left:77%;
 }
 
 body {
   background-color: rgb(83, 145, 145);
   margin: 0;
+  
 }
+
 
 .exampleimg {
 
@@ -65,35 +68,15 @@ body {
   padding: 10px;
   background-color: lightblue;
   color: #fff;
-  width: 100%;
-  H
-}
-/* NAVBAR MENU */
-/* .menu {
-  display: flex;
-  gap: 10px;
-  font-size: 18px;
-} */
-/* .menu li:hover {
-  background-color: #4c9e9e;
-  border-radius: 5px;
-  transition: 0.3s ease;
-} */
-
-@media screen and (min-width: 768px) {
-  .exampleimg {
-    height: 70%;
-    width: 31%;
-    margin: 1%;
-    cursor: pointer;
-  }
+  max-width: 100%;
+    overflow-x: hidden;
 }
 
 .movieblock {
-  display: flex;
+ display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 7%;
+  margin-left: 4%;
   
 }
 
@@ -102,12 +85,13 @@ body {
   top: 35%;
   left: 53%;
   width: 70%;
-  height: auto;
   background-color: rgb(151, 190, 196);
   transform: translateX(-50%);
   padding: 2%;
   border-radius: 4%;
 }
+
+
 
 .popup h1 {
   text-align: center;
@@ -167,76 +151,31 @@ p:nth-of-type(2) {
   padding: 5%;
 }
 
-.dropdown-check-list {
-  display:inline-block;
-  position: absolute;
-  background-color: #04aa6d;
-  border-radius: 30px;
-  margin-left: 80px;
-  left: 25%;
-}
 
-.dropdown-check-list .anchor {
-  color: white;
-  padding: 6px 10px;
-  font-size: 15px;
-  border: none;
-  border-radius: 30px;
-}
-
-.dropdown-check-list ul.items {
-  color: black;
-  padding: 2px;
-  display: none;
-  margin: 0;
-  /* border: 1px solid #ccc; */
-  border-top: none;
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-check-list ul.items li {
-  list-style: none;
-}
-
-.dropdown-check-list.visible .items {
-  display: block;
-}
 
 /* Sort Dropdown Button */
 
 .dropbtn {
   position: absolute;
+  display: inline-block;
   background-color: #04aa6d;
   color: white;
-  width: 30%;
+  width: auto;
   padding: 10px;
   font-size: 15px;
   border: none;
   border-radius: 30px;
   padding: 10px 10px;
-  left: 3%;
+  left:1%
 }
 
-.dropdown-check-list {
-  /* background-color: #04aa6d; */
-  color: white;
-  font-size: 20px;
-  padding: 6px 10px;
-  margin-right: 47px;
-  margin-left: 70px;
-}
 
 /* The container <div> - needed to position the dropdown content */
 .dropdownSort {
-  position: relative;
+  position: absolute;
   display: inline-block;
+  left: 2%;
 }
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content-sort {
   display: none;
@@ -246,13 +185,13 @@ p:nth-of-type(2) {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
 /* Links inside the dropdown */
 .dropdown-content-sort a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  margin-top: 10%;
 }
 
 /* Change color of dropdown links on hover */
@@ -276,14 +215,29 @@ p:nth-of-type(2) {
 
 
 .switch {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  display: inline;
   width: 105px;
   height: 34px;
   margin-bottom: -12px;
-  left: 130%;
-  
+ 
+  font-size: 15px;
+  border: none;
+  border-radius: 30px;
+ left: 90px;
 }
+
+position: absolute;
+  display: inline-block;
+  background-color: #04aa6d;
+  color: white;
+  width: auto;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 10px;
+  left:1%
 
 .switch input {
   display: none;
@@ -346,22 +300,12 @@ input:checked + .slider:after {
   left: 45%;
 }
 
-@media screen and (min-width: 403px) {
-  .toggle:after {
-    content: "";
-    position: absolute;
-    width: 40%;
-    height: 95%;
-    border-radius: 50%;
-    background-color: rgb(83, 80, 80);
-    top: 1px;
-    left: 3%;
-  }
+
   .checkbox:checked + .toggle::after {
     left: 38%;
     width: 58%;
   }
-}
+
 
 /* //counter(pagination) */
 /* body {
@@ -488,4 +432,18 @@ input:checked + .slider:after {
   margin-top: 40px;
   margin-left: 90px;
   margin-right: 90px;
+}
+
+.backtotop {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  font-size: 30px;
+  background-color: #95e8f3ab;
+  color: #95e8f3ab;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 80px;
 }

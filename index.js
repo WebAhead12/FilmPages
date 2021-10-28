@@ -29,9 +29,17 @@ const imgUrl = "https://image.tmdb.org/t/p/w500/";
 const searchname = document.querySelector("#moviename");
 const search1 = document.querySelector("#search");
 const movieblock1 = document.querySelector(".movieblock");
+const popup1 = document.querySelector(".popup")
+const exit = document.querySelector(".close")
+let isPopupOpen = false;
+const checkList = document.getElementById("list1");
+
+
+
 
 getPopularMovies();
 
+exit.addEventListener("click", closeCard)
 searchname.addEventListener("click", () => (issearch = 0));
 mvtvtoggle.addEventListener("change", (event) => {
   if ((mvtvtoggle.checked == true && searchname.value == "" && issearch == 1) || (mvtvtoggle.checked == true && issearch == 2)) {
@@ -93,7 +101,9 @@ function ratingTopLowMovies() {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -115,7 +125,7 @@ function ratingTopLowTv() {
           image.src = `${imgUrl}${tv.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => { });
 
           movieblock1.appendChild(image);
         }
@@ -139,7 +149,9 @@ function getMovieByName(name) {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -161,7 +173,7 @@ function getTvByName(name) {
           image.src = `${imgUrl}${tv.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => { });
 
           movieblock1.appendChild(image);
         }
@@ -183,7 +195,9 @@ function getPopularMovies() {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -205,25 +219,25 @@ function getPopularTvs() {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => { });
 
           movieblock1.appendChild(image);
         }
       });
     });
 }
-const checkList = document.getElementById("list1");
-//check line below - what is evt? Check checklist webpage - w3
-checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
-  if (checkList.classList.contains("visible")) checkList.classList.remove("visible");
-  else checkList.classList.add("visible");
-};
-
-function uncheck() {
-  let uncheck = document.querySelectorAll(".genre");
-  for (let i = 0; i < uncheck.length; i++) {
-    uncheck[i].checked = false;
-  }
+//open popup card
+function openCard() {
+  if (isPopupOpen) return;
+  isPopupOpen = true;
+  popup1.style["z-index"] = "2";
+  popup1.style.opacity = "1";
+}
+//close popup card
+function closeCard() {
+  popup1.style.opacity = "0";
+  popup1.style["z-index"] = "-1";
+  isPopupOpen = false;
 }
 
 // basic paging logic to demo the buttons

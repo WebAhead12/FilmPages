@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" media="screen" href="style.css">
+  <link rel="stylesheet" media="screen" href="mediaQ.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <title>Movies/Books</title>
 </head>
@@ -13,38 +15,43 @@
 
 <main>
   <nav class="navbar">
-    <img src="CSS Stuff/logo cropped.png">
+    <div id="logotop">
+      <img src="CSS Stuff/logo cropped.png">
+    </div>
     <div class="menu">
 
-
-
       <br><br>
-      <input id="moviename" type="search" placeholder="Search movie name here" />
+      <input id="moviename" type="search" placeholder="Search movie name" />
 
       <button id="search">Search</button>
       <br><br><br>
 
       <!-- NEW INSTEAD OF OG SORT -->
-      <form class="dropDownSort" method="get">
+      <!-- <form class="dropDownSort" method="get">
         <select button class="dropbtn">Sort</button>>
           <div class="dropdown-content-sort"></div>
           <option id="sortDefault" href="#">Sort</option>
           <option id="A-Z" href="#">A-Z</option>
           <option id="Z-A" href="#">Z-A</option>
-          <option id="Newest-to-Oldest" href="#">Newest to Oldest</option>
-          <option id="Oldest-to-Newest" href="#">Oldest to Newest</option>
           <option id="Top-Low-Rating" href="#">Top-Low Rating</option>
         </select>
         <input type="hidden" name="paged" value="1">
-      </form>
+      </form> -->
+
+      <div class="dropdownSort">
+        <button class="dropbtn">Sort</button>
+        <br><br>
+        <div class="dropdown-content-sort">
+          <a id="upcoming" href="#">Upcoming</a>
+          <a id="latest" href="#">Latest</a>
+          <a id="Top-Low-Rating" href="#">Top-Low Rating</a>
+        </div>
+      </div>
 
 
-      <div id="list1" class="dropdown-check-list" tabindex="100">
+      <!-- <div id="list1" class="dropdown-check-list" tabindex="100">
         <span class="anchor">Genres</span>
         <ul class="items">
-          <li>
-            <label><input class="genre" type="checkbox" id="checkId">Adventure</label>
-          </li>
           <li>
             <label><input class="genre" type="checkbox" />Adventure</label>
           </li>
@@ -107,7 +114,7 @@
 
           <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
         </ul>
-      </div>
+      </div> -->
 
       <label class="switch">
         <input type="checkbox" id="togBtn">
@@ -156,8 +163,9 @@
     <br>
     <!-- "You need to get the "type":"Trailer" then "site":"YouTube" then "key": zSWdZVtXT7E (example key) -->
     <h3>Official Trailer</h3>
-    <iframe width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E" title="YouTube video player"
-      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    <iframe class="trailer" width="90%" height="500" src="https://www.youtube.com/embed/zSWdZVtXT7E"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe></video>
 
   </div>
@@ -180,6 +188,9 @@
   </div>
 
 
+  <div class=backtotop>
+    <a href="#logotop">🔝</a>
+  </div>
 
 
 

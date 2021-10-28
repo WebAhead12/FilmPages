@@ -24,7 +24,7 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .exampleimg {
-    height: 70%;
+    height: 30vh;
     width: 31%;
     margin: 1%;
   }
@@ -46,7 +46,7 @@
 
 @media (min-width: 1024px) and (max-width: 1618px) {
   .exampleimg {
-    height: 70%;
+    height: 30vh;
     width: 17%;
     margin: 1%;
   }

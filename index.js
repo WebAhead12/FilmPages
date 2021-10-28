@@ -1,5 +1,3 @@
-const imgURl = "https://image.tmdb.org/t/p/w500/";
-
 const genremovie = {
   28: "Action",
   12: "Adventure",
@@ -52,6 +50,7 @@ const upcoming1 = document.querySelector("#upcoming");
 const toplowrating = document.querySelector("#Top-Low-Rating");
 const mvtvtoggle = document.querySelector("#togBtn"); //toggles between tv shows and movies (movie == flase , tv shows == true)
 const imgUrl = "https://image.tmdb.org/t/p/w500/";
+const videoUrl = "https://www.youtube.com/embed/";
 const searchname = document.querySelector("#moviename");
 const search1 = document.querySelector("#search");
 const movieblock1 = document.querySelector(".movieblock");
@@ -345,9 +344,9 @@ const rating = document.querySelector(".rating1");
 const summary = document.querySelector(".summary1");
 const genre = document.querySelector(".genre1");
 const director = document.querySelector(".director1");
-const cast = document.querySelector("cast1");
-const releaseyear = document.querySelector("year");
-const video1 = document.querySelector("trailer");
+const cast = document.querySelector(".cast1");
+const releaseyear = document.querySelector(".year");
+const video1 = document.querySelector(".trailer");
 
 function getPopularMovies() {
   fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=${page}`)
@@ -359,6 +358,7 @@ function getPopularMovies() {
       total = json["total_pages"];
       console.log(json["total_pages"]);
       const arrmovie = json.results;
+      console.log(json.results);
       arrmovie.forEach((movie, index) => {
         if (movie.poster_path != null) {
           const image = document.createElement("img");
@@ -369,6 +369,11 @@ function getPopularMovies() {
             title.textContent = movie.title;
             imagecard.src = `${imgUrl}${movie.poster_path}`;
             summary.textContent = movie.overview;
+            rating.textContent = `Rating ${movie["vote_average"]}`;
+            releaseyear.textContent = movie["release_date"].split("-")[0];
+            console.log(movie["genre_ids"]);
+            genre.textContent = getGenrefromId(movie["genre_ids"]);
+            video(movie.id);
             openCard();
           });
 
@@ -376,6 +381,33 @@ function getPopularMovies() {
         }
       });
     });
+}
+function video(id) {
+  fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=d5dc762873106644192a916a78a39251&language=en-US`)
+    .then((response) => {
+      if (!response.ok) if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+    .then((json) => {
+      let arr1 = json.results;
+      arr1.forEach((element) => {
+        if (element.type == "Trailer") {
+          video1.src = `${videoUrl}${element.key}`;
+        }
+      });
+    });
+}
+// transform genre id to genre string
+function getGenrefromId(arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (i == arr.length - 1) {
+      str += `${genremovie[arr[i]]}`;
+    } else {
+      str += `${genremovie[arr[i]]}/`;
+    }
+  }
+  return str;
 }
 //get all popular tv shows
 function getPopularTvs() {

@@ -57,6 +57,16 @@ const movieblock1 = document.querySelector(".movieblock");
 const popup1 = document.querySelector(".popup");
 const exit = document.querySelector(".close");
 const checkList = document.getElementById("list1");
+//popup variables
+const title = document.querySelector(".popup-title");
+const imagecard = document.querySelector(".image");
+const rating = document.querySelector(".rating1");
+const summary = document.querySelector(".summary1");
+const genre = document.querySelector(".genre1");
+const director = document.querySelector(".director1");
+const cast = document.querySelector(".cast1");
+const releaseyear = document.querySelector(".year");
+const video1 = document.querySelector(".trailer");
 
 getPopularMovies(); //shows popularMovies when u load the website
 
@@ -250,6 +260,14 @@ function ratingTopLowMovies() {
           image.classList.add("exampleimg");
 
           image.addEventListener("click", () => {
+            title.textContent = movie.title;
+            imagecard.src = `${imgUrl}${movie.poster_path}`;
+            summary.textContent = movie.overview;
+            rating.textContent = `Rating ${movie["vote_average"]}`;
+            releaseyear.textContent = movie["release_date"].split("-")[0];
+            console.log(movie["genre_ids"]);
+            genre.textContent = getGenrefromId(movie["genre_ids"]);
+            video(movie.id);
             openCard();
           });
 
@@ -275,7 +293,16 @@ function ratingTopLowTv() {
           image.src = `${imgUrl}${tv.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            title.textContent = tv.name;
+            imagecard.src = `${imgUrl}${tv.poster_path}`;
+            summary.textContent = tv.overview;
+            rating.textContent = `Rating ${tv["vote_average"]}`;
+            releaseyear.textContent = tv["first_air_date"].split("-")[0];
+            genre.textContent = getGenrefromId(tv["genre_ids"]);
+            video(tv.id);
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -303,6 +330,14 @@ function getMovieByName(name) {
           image.classList.add("exampleimg");
 
           image.addEventListener("click", () => {
+            title.textContent = movie.title;
+            imagecard.src = `${imgUrl}${movie.poster_path}`;
+            summary.textContent = movie.overview;
+            rating.textContent = `Rating ${movie["vote_average"]}`;
+            releaseyear.textContent = movie["release_date"].split("-")[0];
+            console.log(movie["genre_ids"]);
+            genre.textContent = getGenrefromId(movie["genre_ids"]);
+            video(movie.id);
             openCard();
           });
 
@@ -330,7 +365,16 @@ function getTvByName(name) {
           image.src = `${imgUrl}${tv.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            title.textContent = tv.name;
+            imagecard.src = `${imgUrl}${tv.poster_path}`;
+            summary.textContent = tv.overview;
+            rating.textContent = `Rating ${tv["vote_average"]}`;
+            releaseyear.textContent = tv["first_air_date"].split("-")[0];
+            genre.textContent = getGenrefromId(tv["genre_ids"]);
+            video(tv.id);
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -338,15 +382,6 @@ function getTvByName(name) {
     });
 }
 //get all popular movies
-const title = document.querySelector(".popup-title");
-const imagecard = document.querySelector(".image");
-const rating = document.querySelector(".rating1");
-const summary = document.querySelector(".summary1");
-const genre = document.querySelector(".genre1");
-const director = document.querySelector(".director1");
-const cast = document.querySelector(".cast1");
-const releaseyear = document.querySelector(".year");
-const video1 = document.querySelector(".trailer");
 
 function getPopularMovies() {
   fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5dc762873106644192a916a78a39251&language=en-US&page=${page}`)
@@ -382,6 +417,8 @@ function getPopularMovies() {
       });
     });
 }
+
+//gets the trailer of the movie
 function video(id) {
   fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=d5dc762873106644192a916a78a39251&language=en-US`)
     .then((response) => {
@@ -400,11 +437,21 @@ function video(id) {
 // transform genre id to genre string
 function getGenrefromId(arr) {
   let str = "";
-  for (let i = 0; i < arr.length; i++) {
-    if (i == arr.length - 1) {
-      str += `${genremovie[arr[i]]}`;
-    } else {
-      str += `${genremovie[arr[i]]}/`;
+  if (mvtvtoggle == true) {
+    for (let i = 0; i < arr.length; i++) {
+      if (i == arr.length - 1) {
+        str += `${genretv[arr[i]]}`;
+      } else {
+        str += `${genretv[arr[i]]}/`;
+      }
+    }
+  } else if (mvtvtoggle == false) {
+    for (let i = 0; i < arr.length; i++) {
+      if (i == arr.length - 1) {
+        str += `${genremovie[arr[i]]}`;
+      } else {
+        str += `${genremovie[arr[i]]}/`;
+      }
     }
   }
   return str;
@@ -420,13 +467,22 @@ function getPopularTvs() {
       total = json["total_pages"];
       console.log(json["total_pages"]);
       const arrmovie = json.results;
-      arrmovie.forEach((movie, index) => {
-        if (movie.poster_path != null) {
+      arrmovie.forEach((tv, index) => {
+        if (tv.poster_path != null) {
           const image = document.createElement("img");
-          image.src = `${imgUrl}${movie.poster_path}`;
+          image.src = `${imgUrl}${tv.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            title.textContent = tv.name;
+            imagecard.src = `${imgUrl}${tv.poster_path}`;
+            summary.textContent = tv.overview;
+            rating.textContent = `Rating ${tv["vote_average"]}`;
+            releaseyear.textContent = tv["first_air_date"].split("-")[0];
+            genre.textContent = getGenrefromId(tv["genre_ids"]);
+            video(tv.id);
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -450,7 +506,16 @@ function upcomingMovie() {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            title.textContent = movie.title;
+            imagecard.src = `${imgUrl}${movie.poster_path}`;
+            summary.textContent = movie.overview;
+            rating.textContent = `Rating ${movie["vote_average"]}`;
+            releaseyear.textContent = movie["release_date"].split("-")[0];
+            genre.textContent = getGenrefromId(movie["genre_ids"]);
+            video(movie.id);
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }
@@ -475,7 +540,16 @@ function airingTv() {
           image.src = `${imgUrl}${movie.poster_path}`;
           image.classList.add("exampleimg");
 
-          image.addEventListener("click", () => {});
+          image.addEventListener("click", () => {
+            title.textContent = tv.name;
+            imagecard.src = `${imgUrl}${tv.poster_path}`;
+            summary.textContent = tv.overview;
+            rating.textContent = `Rating ${tv["vote_average"]}`;
+            releaseyear.textContent = tv["first_air_date"].split("-")[0];
+            genre.textContent = getGenrefromId(tv["genre_ids"]);
+            video(tv.id);
+            openCard();
+          });
 
           movieblock1.appendChild(image);
         }

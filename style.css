@@ -96,7 +96,19 @@ body::-webkit-scrollbar {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
 }
-.image {
+/* .posterRating {
+  width: 75%;
+  height: 40%;
+  margin-left: 10%;
+} */
+
+.posterRating {
+  position: relative;
+}
+
+
+.posterRating img{
+  
   width: 75%;
   height: 40%;
   margin-left: 10%;
@@ -109,22 +121,21 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
-.popup p:nth-of-type(1) {
+ .rating1 {
   position: absolute;
   background-color: rgb(51, 88, 102);
-  border-radius: 70px;
+  border-radius: 90px;
   background: rgb(83, 145, 145);
   font-size: 18px;
   padding: 1.5%;
-  width: 20%;
-  height: 5%;
-  top: 5%;
+  width: 10%;
+  height: 7%;
+  top: 0;
   left: 7%;
-  display: flex;
-  text-align: center;
-  font-family: "Ubuntu", sans-serif;
-  align-items: center;
+border:7px solid#000000 ;
+ color: white;
 }
+
 
 .popup h3 {
   text-align: center;
@@ -132,6 +143,7 @@ body::-webkit-scrollbar {
   font-weight: 700;
 }
 
+.popup p:nth-of-type(1),
 .popup p:nth-of-type(3),
 p:nth-of-type(4),
 p:nth-of-type(5),

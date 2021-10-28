@@ -4,6 +4,12 @@
     width: 31%;
     margin: 1%;
   }
+
+  .rating1 {
+    width: min-content;
+    height: min-content;
+   
+   }
 }
 
 @media (min-width: 1024px) and (max-width: 2048px) {
@@ -12,6 +18,11 @@
     width: 17%;
     margin: 1%;
   }
+  .rating1 {
+    width: min-content;
+    height: min-content;
+   
+   }
 
   .popup {
     overflow-y: auto;
@@ -22,5 +33,13 @@
   /* Hide scrollbar for Chrome, Safari and Opera */
   .popup::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (min-width:320px) and (max-width:424px) {
+  .rating1 {
+   width: min-content;
+   height: min-content;
+  
   }
 }

@@ -38,8 +38,7 @@ const genretv = {
   37: "Western",
 };
 let check = 0, //check = 0 (default), check = 1 (top-low rating), check = 2 (upcoming)
-  index = 0, //for pagination (start)
-  total = 1, //for pagination (end)
+  total = 500, //for pagination (end)
   page = 1;
 let isPopupOpen = false;
 let issearch = 2; // issearch = 1 (moviebyname or tvbyname) , issearch = 2(popularmovie or populartv) , issearch = 0(u cant press on any button except for search)
@@ -87,11 +86,11 @@ mvtvtoggle.addEventListener("change", () => {
   } else if (mvtvtoggle.checked == false && check == 2) {
     upcomingMovie();
   }
-  if (mvtvtoggle.checked == true && issearch == 2) {
+  if (mvtvtoggle.checked == true && issearch == 2 && check == 0) {
     getPopularTvs();
   } else if (mvtvtoggle.checked == true && searchname.value != "" && issearch == 1) {
     getTvByName(searchname.value);
-  } else if (mvtvtoggle.checked == false && issearch == 2) {
+  } else if (mvtvtoggle.checked == false && issearch == 2 && check == 0) {
     getPopularMovies();
   } else if (mvtvtoggle.checked == false && searchname.value != "" && issearch == 1) {
     getMovieByName(searchname.value);
@@ -102,10 +101,8 @@ search1.addEventListener("click", () => {
   movieblock1.innerHTML = "";
   toplowrating.style["background-color"] = "#f1f1f1";
   check = 0;
-  // index = -1;
-  // page = 1;
-  // pr.setAttribute("data-state", index === 0 ? "disabled" : "");
-  counter1.innerHTML = index + 1 + " / " + total;
+  page = 1;
+
   if (mvtvtoggle.checked == true && searchname.value == "") {
     getPopularTvs();
     issearch = 2;
@@ -120,6 +117,7 @@ search1.addEventListener("click", () => {
     getMovieByName(searchname.value);
     issearch = 1;
   }
+  counter1.innerHTML = page + " / " + total;
 });
 
 toplowrating.addEventListener("click", () => {
@@ -272,6 +270,7 @@ function ratingTopLowMovies() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -305,6 +304,7 @@ function ratingTopLowTv() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -342,6 +342,7 @@ function getMovieByName(name) {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -377,6 +378,7 @@ function getTvByName(name) {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -413,9 +415,11 @@ function getPopularMovies() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
+  counter1.innerHTML = page + " / " + total;
 }
 
 //gets the trailer of the movie
@@ -486,6 +490,7 @@ function getPopularTvs() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -519,6 +524,7 @@ function upcomingMovie() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -553,6 +559,7 @@ function airingTv() {
           });
 
           movieblock1.appendChild(image);
+          counter1.innerHTML = page + " / " + total;
         }
       });
     });
@@ -573,16 +580,7 @@ function closeCard() {
 
 // basic paging logic to demo the buttons
 
-pr.onclick = slide.bind(this, -1);
-pl.onclick = slide.bind(this, 1);
-
-function slide(offset) {
-  index = Math.min(Math.max(index + offset, 0), total - 1);
-  counter1.innerHTML = index + 1 + " / " + total;
+function slide() {
+  counter1.innerHTML = page + " / " + total;
   // page = counter1.textContent.split("/")[0];
-
-  pr.setAttribute("data-state", index === 0 ? "disabled" : "");
-  pl.setAttribute("data-state", index === total - 1 ? "disabled" : "");
 }
-
-slide(0);

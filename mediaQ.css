@@ -1,3 +1,27 @@
+@media (min-width: 320) and (max-width: 424) {
+  .rating1 {
+    width: min-content;
+    height: min-content;
+  }
+}
+
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .popup {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    max-height: 900px;
+    width: 300px;
+  }
+  .rating1 {
+    width: min-content;
+    height: min-content;
+    top: 5%;
+    left: 35%;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .exampleimg {
     height: 70%;
@@ -8,10 +32,19 @@
   .rating1 {
     width: min-content;
     height: min-content;
+    top: 5%;
+    left: 35%;
+  }
+  .popup {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    max-height: 900px;
+    width: 400px;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 2048px) {
+@media (min-width: 1024px) and (max-width: 1618px) {
   .exampleimg {
     height: 70%;
     width: 17%;
@@ -20,13 +53,16 @@
   .rating1 {
     width: min-content;
     height: min-content;
+    top: 5%;
+    left: 35%;
   }
 
   .popup {
     overflow-y: auto;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    max-height: 1400px;
+    max-height: 900px;
+    width: 450px;
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .popup::-webkit-scrollbar {
@@ -38,5 +74,21 @@
   .rating1 {
     width: min-content;
     height: min-content;
+  }
+}
+
+@media (max-width: 2048) and (min-width: 1618px) {
+  .popup {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    max-height: 900px;
+    width: 400px;
+  }
+  .rating1 {
+    width: min-content;
+    height: min-content;
+    top: 5%;
+    left: 35%;
   }
 }

@@ -72,7 +72,7 @@ body::-webkit-scrollbar {
   max-width: 100%;
   overflow-x: hidden;
 }
-
+/* Change append to inside the grid in JS */
 .movieblock {
   display: flex;
   flex-direction: row;
@@ -84,18 +84,20 @@ body::-webkit-scrollbar {
   opacity: 0;
   position: absolute;
   top: 35%;
-  left: 53%;
-  width: 70%;
+  left: 51.5%;
+  width:250px;
   background-color: rgb(151, 190, 196);
   transform: translateX(-50%);
   padding: 2%;
   border-radius: 4%;
+  border:10px solid rgb(90, 135, 83);
 }
 
 .popup h1 {
   text-align: center;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+  margin-top: 30%;
 }
 /* .posterRating {
   width: 75%;
@@ -103,9 +105,7 @@ body::-webkit-scrollbar {
   margin-left: 10%;
 } */
 
-.posterRating {
-  position: relative;
-}
+
 
 .posterRating img {
   width: 75%;
@@ -130,12 +130,13 @@ body::-webkit-scrollbar {
   width: 10%;
   height: 7%;
   top: 0;
-  left: 7%;
+  left: 30%;
   border: 7px solid#000000;
   color: white;
 }
 
 .popup h3 {
+  margin-top: 5$;
   text-align: center;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
@@ -270,7 +271,7 @@ p:nth-of-type(2) {
   content: "";
   height: 33px;
   width: 35px;
-  left: 4px;
+  left: 2px;
   bottom: 1px;
   background-color: white;
   -webkit-transition: 0.4s;
@@ -307,6 +308,7 @@ input:checked + .slider:after {
   content: "Tv shows";
   font-size: 15px;
   left: 45%;
+  
 }
 
 .checkbox:checked + .toggle::after {

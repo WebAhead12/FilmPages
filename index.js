@@ -420,19 +420,35 @@ function getPopularMovies() {
 
 //gets the trailer of the movie
 function video(id) {
-  fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=d5dc762873106644192a916a78a39251&language=en-US`)
-    .then((response) => {
-      if (!response.ok) if (!response.ok) throw new Error(response.status);
-      return response.json();
-    })
-    .then((json) => {
-      let arr1 = json.results;
-      arr1.forEach((element) => {
-        if (element.type == "Trailer") {
-          video1.src = `${videoUrl}${element.key}`;
-        }
+  if (mvtvtoggle == true) {
+    fetch(`https://api.themoviedb.org/3/tv/${id}/videos?api_key=d5dc762873106644192a916a78a39251&language=en-US`)
+      .then((response) => {
+        if (!response.ok) if (!response.ok) throw new Error(response.status);
+        return response.json();
+      })
+      .then((json) => {
+        let arr1 = json.results;
+        arr1.forEach((element) => {
+          if (element.type == "Trailer") {
+            video1.src = `${videoUrl}${element.key}`;
+          }
+        });
       });
-    });
+  } else if (mvtvtoggle == false) {
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=d5dc762873106644192a916a78a39251&language=en-US`)
+      .then((response) => {
+        if (!response.ok) if (!response.ok) throw new Error(response.status);
+        return response.json();
+      })
+      .then((json) => {
+        let arr1 = json.results;
+        arr1.forEach((element) => {
+          if (element.type == "Trailer") {
+            video1.src = `${videoUrl}${element.key}`;
+          }
+        });
+      });
+  }
 }
 // transform genre id to genre string
 function getGenrefromId(arr) {

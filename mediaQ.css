@@ -8,8 +8,7 @@
   .rating1 {
     width: min-content;
     height: min-content;
-   
-   }
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 2048px) {
@@ -21,8 +20,7 @@
   .rating1 {
     width: min-content;
     height: min-content;
-   
-   }
+  }
 
   .popup {
     overflow-y: auto;
@@ -36,10 +34,9 @@
   }
 }
 
-@media (min-width:320px) and (max-width:424px) {
+@media (min-width: 320px) and (max-width: 424px) {
   .rating1 {
-   width: min-content;
-   height: min-content;
-  
+    width: min-content;
+    height: min-content;
   }
 }

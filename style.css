@@ -9,12 +9,11 @@ main {
   width: 100%;
 }
 
-main img {
+.logo {
   position: absolute;
   left: 2%;
-  top:1%
+  top: 1%;
 }
-
 
 /* .dropdownSort, */
 .dropdown-check-list {
@@ -25,7 +24,7 @@ main img {
 #moviename {
   position: absolute;
   top: 2.5%;
-  left:30%;
+  left: 30%;
   border-radius: 20px;
   border-color: #04aa6d;
   border: none;
@@ -34,7 +33,7 @@ main img {
 }
 #search {
   position: absolute;
-  top:8%;
+  top: 8%;
   color: #fff;
   border-radius: 15px;
   background: #04aa6d;
@@ -42,18 +41,20 @@ main img {
   padding: 10px;
   margin-left: 5px;
   top: 2.5%;
-  left:77%;
+  left: 77%;
 }
 
 body {
   background-color: rgb(83, 145, 145);
   margin: 0;
-  
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
-
 .exampleimg {
-
   height: 80%;
   width: 45%;
   margin: 2%;
@@ -64,20 +65,19 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   padding: 10px;
   background-color: lightblue;
   color: #fff;
   max-width: 100%;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .movieblock {
- display: flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 4%;
-  
 }
 
 .popup {
@@ -91,23 +91,22 @@ body {
   border-radius: 4%;
 }
 
-
-
 .popup h1 {
   text-align: center;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
 }
-.popup img {
+.image {
   width: 75%;
   height: 40%;
   margin-left: 10%;
 }
 
-.popup .close {
+.close {
   width: 10%;
   height: 10%;
   margin-left: 90%;
+  cursor: pointer;
 }
 
 .popup p:nth-of-type(1) {
@@ -133,7 +132,11 @@ body {
   font-weight: 700;
 }
 
-.popup p:nth-of-type(3), p:nth-of-type(4), p:nth-of-type(5), p:nth-of-type(6), p:nth-of-type(7)  {
+.popup p:nth-of-type(3),
+p:nth-of-type(4),
+p:nth-of-type(5),
+p:nth-of-type(6),
+p:nth-of-type(7) {
   text-align: center;
   font-family: "Ubuntu", sans-serif;
   padding: 1%;
@@ -151,8 +154,6 @@ p:nth-of-type(2) {
   padding: 5%;
 }
 
-
-
 /* Sort Dropdown Button */
 
 .dropbtn {
@@ -166,9 +167,8 @@ p:nth-of-type(2) {
   border: none;
   border-radius: 30px;
   padding: 10px 10px;
-  left:1%
+  left: 1%;
 }
-
 
 /* The container <div> - needed to position the dropdown content */
 .dropdownSort {
@@ -213,21 +213,20 @@ p:nth-of-type(2) {
   background-color: #3e8e41;
 }
 
-
 .switch {
   position: absolute;
   display: inline;
   width: 105px;
   height: 34px;
   margin-bottom: -12px;
- 
+
   font-size: 15px;
   border: none;
   border-radius: 30px;
- left: 90px;
+  left: 90px;
 }
 
-position: absolute;
+/* position: absolute;
   display: inline-block;
   background-color: #04aa6d;
   color: white;
@@ -237,7 +236,7 @@ position: absolute;
   border: none;
   border-radius: 30px;
   padding: 10px 10px;
-  left:1%
+  left:1% */
 
 .switch input {
   display: none;
@@ -260,7 +259,7 @@ position: absolute;
   position: absolute;
   content: "";
   height: 33px;
-  width:35px;
+  width: 35px;
   left: 4px;
   bottom: 1px;
   background-color: white;
@@ -300,26 +299,22 @@ input:checked + .slider:after {
   left: 45%;
 }
 
-
-  .checkbox:checked + .toggle::after {
-    left: 38%;
-    width: 58%;
-  }
-
+.checkbox:checked + .toggle::after {
+  left: 38%;
+  width: 58%;
+}
 
 /* //counter(pagination) */
 /* body {
   background: #33ab83;
 } */
 
-
-
 .paginate {
   margin: 10px;
   width: 50px;
   height: 50px;
   cursor: pointer;
-   transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   top: 50%;
   margin-top: -20px;
   -webkit-filter: drop-shadow(0 2px 0px rgba(0, 0, 0, 0.2));

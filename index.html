@@ -16,7 +16,7 @@
 <main>
   <nav class="navbar">
     <div id="logotop">
-      <img src="CSS Stuff/logo cropped.png">
+      <img class="logo" src="CSS-Stuff/logo cropped.png">
     </div>
     <div class="menu">
 
@@ -26,95 +26,14 @@
       <button id="search">Search</button>
       <br><br><br>
 
-      <!-- NEW INSTEAD OF OG SORT -->
-      <!-- <form class="dropDownSort" method="get">
-        <select button class="dropbtn">Sort</button>>
-          <div class="dropdown-content-sort"></div>
-          <option id="sortDefault" href="#">Sort</option>
-          <option id="A-Z" href="#">A-Z</option>
-          <option id="Z-A" href="#">Z-A</option>
-          <option id="Top-Low-Rating" href="#">Top-Low Rating</option>
-        </select>
-        <input type="hidden" name="paged" value="1">
-      </form> -->
-
       <div class="dropdownSort">
         <button class="dropbtn">Sort</button>
         <br><br>
         <div class="dropdown-content-sort">
           <a id="upcoming" href="#">Upcoming</a>
-          <a id="latest" href="#">Latest</a>
           <a id="Top-Low-Rating" href="#">Top-Low Rating</a>
         </div>
       </div>
-
-
-      <!-- <div id="list1" class="dropdown-check-list" tabindex="100">
-        <span class="anchor">Genres</span>
-        <ul class="items">
-          <li>
-            <label><input class="genre" type="checkbox" />Adventure</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Action</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Animation</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Comedy</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Crime</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Documentary</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Drama</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Family</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Fantasy</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />History</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Horror</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Music</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Mystery</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Romance</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Science Fiction</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />TV Movie</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Thriller</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />War</label>
-          </li>
-          <li>
-            <label><input class="genre" type="checkbox" />Western</label>
-          </li>
-          </li>
-          <button id="filterSubmit" type="submit">Search</button>
-
-          <button type="button" class="uncheck" onclick="uncheck()">Clear</button>
-        </ul>
-      </div> -->
 
       <label class="switch">
         <input type="checkbox" id="togBtn">
@@ -135,31 +54,31 @@
 
   <br><br>
   <div class="popup">
-    <img class="close" src="/CSS Stuff/Exit-Icon.jpg">
+    <img class="close" src="CSS-Stuff/Exit-Icon.png">
     <!-- "title" -->
-    <h1 class="popup-title">Interstellar</h1>
+    <h1 class="popup-title"></h1>
     <!-- Need to do JS for X button -->
 
     <!-- "poster_path" -->
-    <img src="CSS Stuff/interstellar example.jpg">
+    <img class="image"  src="CSS-Stuff/interstellar example.jpg">
     <!-- "vote_average" -->
-    <p>Rating 8.6 </p>
+    <p class="rating1">Rating 8.6 </p>
     <!-- "overview" -->
     <h3>Overview</h3>
-    <p>The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
+    <p class="summary1">The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the
       limitations on human space travel and conquer the vast distances involved in an interstellar voyage.</p>
     <!-- "genres" -->
     <h3>Genre</h3>
-    <p>Sci-fi/Adventure/Drama</p>
+    <p class="genre1">Sci-fi/Adventure/Drama</p>
     <!-- "job":"Director"  *****Make sure to specify that only the word Director alone is searched for -->
     <h3>Director</h3>
-    <p>Christopher Nolan</p>
+    <p class="director1">Christopher Nolan</p>
     <!------"cast"----"order": 0-4 ------>
     <h3>Cast</h3>
-    <p>A Bunch of People </p>
+    <p class="cast1">A Bunch of People </p>
     <!-- "release_date" -->
     <h3>Release Date</h3>
-    <p>2014</p>
+    <p class="year">2014</p>
     <br>
     <!-- "You need to get the "type":"Trailer" then "site":"YouTube" then "key": zSWdZVtXT7E (example key) -->
     <h3>Official Trailer</h3>

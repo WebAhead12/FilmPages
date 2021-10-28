@@ -1,0 +1,5 @@
+Project Name; FilmPages
+Group: Julio, Diana, Nur
+Description: A movie database that contains information on TV shows and Movies. You can check out trailers and view various descriptionsabout whatever movie or TV show that comes to mind. 
+Features: Search, Sort by, TV/Movie toggle, main page full of popular movies, popup containing info and trailers, pages. 
+Difficulties: time management, aligning nav buttons (CSS), pagination, zoom card CSS + responsiveness, understanding github push and stash.

@@ -313,7 +313,7 @@ function ratingTopLowTv() {
 
 function getMovieByName(name) {
   fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=d5dc762873106644192a916a78a39251&language=en-US&query=${name}&api_key=d5dc762873106644192page=${page}&include_adult=false`
+    `https://api.themoviedb.org/3/search/movie?api_key=d5dc762873106644192a916a78a39251&language=en-US&query=${name}&api_key=d5dc762873106644192&page=${page}&include_adult=false`
   )
     .then((response) => {
       if (!response.ok) throw new Error(response.status);
@@ -432,7 +432,8 @@ function video(id) {
           video1.src = `${videoUrl}${element.key}`;
         }
       });
-    });
+    })
+    .catch(alert);
 }
 // transform genre id to genre string
 function getGenrefromId(arr) {

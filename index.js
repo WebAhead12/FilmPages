@@ -70,7 +70,9 @@ const video1 = document.querySelector(".trailer");
 getPopularMovies(); //shows popularMovies when u load the website
 
 // AddEventListeners:
-exit.addEventListener("click", closeCard); //closes popup card
+exit.addEventListener("click", () => {
+  closeCard();
+}); //closes popup card
 
 searchname.addEventListener("click", () => (issearch = 0));
 
